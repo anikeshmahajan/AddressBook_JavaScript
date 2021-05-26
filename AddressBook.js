@@ -128,3 +128,8 @@ class AddressBook{
      let addressbook = new AddressBook("Anikesh","Mahajan","Akhnoor","Jammu","Jammu","181201","1111111111","anikesh0725@gmail.com");
      console.log(addressbook.toString());
 
+
+     let addressBookArry = new Array();
+     let addressbook1 = new AddressBook("Ankush","Mahajan","Akhnoor","Kashmir","Kashmir","181221","1111111111","ankush@gmail.com");
+        addressBookArry.push(addressbook1);
+        console.log(addressBookArry)

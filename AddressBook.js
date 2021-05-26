@@ -43,80 +43,7 @@ class AddressBook{
         else throw new ValidationError("Invalid Email: "+params[7]);
     }
 
-        getFirstName()
-        {
-            return this.firstName
-        }
-        setFirstName(firstName)
-        {
-            
-            return this.firstName = firstName;
-        }
-        
-        getlastName()
-        {
-            return this.lastName
-        }
-        setlastName(lastName)
-        {
-            return this.lastName = lastName;
-        }
-        
-        getzip()
-        {
-            return this.zip
-        }
-        setZip(zip)
-        {
-            return this.zip = zip;
-        }
-        
-        getAddress()
-        {
-            return this.address
-        }
-        setAddress(address)
-        {
-            return this.address = address;
-        }
-        
-        getCity()
-        {
-            return this.city
-        }
-    
-        setCity(city)
-        {
-            return this.city = city;
-        }
-        getState()
-        {
-            return this.state
-        }
-    
-        setState(state)
-        {
-            return this.state = state;
-        }
-        getPhoneNo()
-        {
-            return this.phNo
-        }
-    
-        setPhoneNo(phNo)
-        {
-            return this.phNo = phNo;
-        }
-        getEmail()
-        {
-            return this.email
-        }
-    
-        setEmail(email)
-        {
-            return this.email = email;
-        }
-
+  
     toString()
     {
         return  "FirstName :" +" "+ this.firstName + " "+ "LastName :"+" "+ this.lastName  +
@@ -124,12 +51,39 @@ class AddressBook{
         " "+ this.state+" "+ "Zip :"+" "+ this.zip +" "+ "PhoneNo :"+" "+ this.phNo+
         " "+ "Email :"+" "+ this.email;
     }
+    
 }
      let addressbook = new AddressBook("Anikesh","Mahajan","Akhnoor","Jammu","Jammu","181201","1111111111","anikesh0725@gmail.com");
      console.log(addressbook.toString());
-
-
+     
      let addressBookArry = new Array();
-     let addressbook1 = new AddressBook("Ankush","Mahajan","Akhnoor","Kashmir","Kashmir","181221","1111111111","ankush@gmail.com");
-        addressBookArry.push(addressbook1);
-        console.log(addressBookArry)
+       addressBookArry.push(addressbook)
+        addressBookArry.push(new AddressBook("Ankush","Mahajan","Akhnoor","Kashmir","Kashmir","181221","1111111111","ankush@gmail.com"));
+       console.log(addressBookArry)
+      
+       
+       function searchByNameAndEdit(firstName,newName)
+       {
+          for(contact of addressBookArry){
+              if(contact.firstName == firstName)
+              {
+                  contact.firstName=newName;
+                console.log("Updated new Name is : "+ contact.firstName );
+              }
+              
+          }
+       }
+       searchByNameAndEdit("Anikesh","Raju")
+       function searchByNameAndDelete(firstName)
+       {
+        for(contact of addressBookArry){
+            if(contact.firstName == firstName)
+            {
+              addressBookArry.pop(contact)
+            }
+            
+        }
+
+       }
+       searchByNameAndDelete("Ankush")
+       console.log(addressBookArry)

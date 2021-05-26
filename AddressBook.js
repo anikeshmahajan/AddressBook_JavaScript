@@ -87,3 +87,12 @@ class AddressBook{
        }
        searchByNameAndDelete("Ankush")
        console.log(addressBookArry)
+
+       function count(contactCount){
+        return ++contactCount;
+    }
+    
+    function getCount(){
+        console.log("Contact Count: "+addressBookArry.reduce(count,0)+"\n");
+    }
+    getCount();

@@ -53,7 +53,7 @@ class AddressBook{
     }
     
 }
-     let addressbook = new AddressBook("Anikesh","Mahajan","Akhnoor","Jammu","Jammu","181201","1111111111","anikesh0725@gmail.com");
+     let addressbook = new AddressBook("Anikesh","Mahajan","Akhnoor","Akhnoor","Jammu","181201","1111111111","anikesh0725@gmail.com");
      console.log(addressbook.toString());
      
      let addressBookArry = new Array();
@@ -110,4 +110,39 @@ class AddressBook{
     }
  
     checkDuplicacy("Raj")
+
+    function searchContactOnCityState(firstName,city,state){
+        let citySearch=addressBookArry.filter(contacts => contacts.firstName == firstName && contacts.city == city).toString();
+        let stateSearch=addressBookArry.filter(contacts => contacts.firstName == firstName && contacts.state == state).toString();
+        
+        if (citySearch.length >0 ){
+           
+            console.log(" Match")
+        }else{
+            console.log(" No Match")
+        }
     
+        if(stateSearch.length >0)
+        {
+            console.log(" Match")
+        }else{
+            console.log(" No Match")
+        }
+    }
+    searchContactOnCityState("Raju","Akhnoor","Jammu");
+   
+
+ 
+
+
+    // function viewByCity(city){
+    //     addressBookArry.filter(contact=>contact.city==city).forEach(contact=>console.log(contact))
+    // }
+    
+    // function viewByState(state){
+    //     addressBookArry.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
+    // }
+    // console.log("Who lives in Akhnoor?");
+    // viewByCity("Akhnoor");
+    // console.log("Who lives in Jammu ?");
+    // viewByState("Jammu");

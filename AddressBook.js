@@ -133,16 +133,17 @@ class AddressBook{
    
 
  
-
-
-    // function viewByCity(city){
-    //     addressBookArry.filter(contact=>contact.city==city).forEach(contact=>console.log(contact))
-    // }
+  function viewByCity(city){
+        addressBookArry.filter(contact=>contact.city==city).forEach(contact=>console.log(contact))
+    }
     
-    // function viewByState(state){
-    //     addressBookArry.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
-    // }
-    // console.log("Who lives in Akhnoor?");
-    // viewByCity("Akhnoor");
-    // console.log("Who lives in Jammu ?");
-    // viewByState("Jammu");
+    function viewByState(state){
+        addressBookArry.filter(contact=>contact.state==state).forEach(contact=>console.log(contact))
+    }
+    console.log("Who lives in Akhnoor?");
+    viewByCity("Akhnoor");
+    console.log("Who lives in Jammu ?");
+    viewByState("Jammu");
+
+
+  

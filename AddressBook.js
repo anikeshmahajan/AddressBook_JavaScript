@@ -95,4 +95,19 @@ class AddressBook{
     function getCount(){
         console.log("Contact Count: "+addressBookArry.reduce(count,0)+"\n");
     }
-    getCount();
+    getCount();    
+    
+    function checkDuplicacy(firstName)
+    {
+        let d =  addressBookArry.filter(contact=>
+              contact.firstName==firstName ).map(contact => contact.firstName.toString() )
+              if(d.length >0)
+              {
+              console.log(firstName + " " +  "Already Exists ")
+              }
+              else
+              console.log(firstName + " "+"Doesnt Exist")
+    }
+ 
+    checkDuplicacy("Raj")
+    

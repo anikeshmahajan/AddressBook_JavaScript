@@ -154,3 +154,11 @@ class AddressBook{
     }
     console.log("Count in Jammu: "+getCountByCityState("Jammu"));
     console.log("Count in Akhnoor: "+getCountByCityState("Akhnoor"));
+
+    function sortContactsByName(){
+       let sortedRecord= addressBookArry.sort();
+       console.log("The sorted Address Book on Name is: ");
+       console.log(sortedRecord);
+     }
+     sortContactsByName();
+   

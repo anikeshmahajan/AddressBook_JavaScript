@@ -56,6 +56,7 @@ class AddressBook{
      let addressbook = new AddressBook("Anikesh","Mahajan","Akhnoor","Akhnoor","Jammu","181201","1111111111","anikesh0725@gmail.com");
      console.log(addressbook.toString());
      
+     
      let addressBookArry = new Array();
        addressBookArry.push(addressbook)
         addressBookArry.push(new AddressBook("Ankush","Mahajan","Akhnoor","Kashmir","Kashmir","181221","1111111111","ankush@gmail.com"));
@@ -156,9 +157,45 @@ class AddressBook{
     console.log("Count in Akhnoor: "+getCountByCityState("Akhnoor"));
 
     function sortContactsByName(){
-       let sortedRecord= addressBookArry.sort();
-       console.log("The sorted Address Book on Name is: ");
-       console.log(sortedRecord);
+        sortContacts("name");
      }
      sortContactsByName();
-   
+     console.log("The sorted Address Book on Name is: ");
+     console.log(addressBookArry);
+    
+    //UC 12
+    function sortContacts(type){
+        switch(type){
+            case "name": addressBookArry.sort((contact1,contact2) => {
+                            if (contact1.firstName>contact2.firstName) return 1;
+                            else if (contact1.firstName<contact2.firstName) return -1;
+                            return 0;
+                            }); break;
+            case "city": addressBookArry.sort((contact1,contact2) => {
+                            if (contact1.city>contact2.city) return 1;
+                            else if (contact1.city<contact2.city) return -1;
+                            return 0;
+                            }); break;
+            case "state": addressBookArry.sort((contact1,contact2) => {
+                            if (contact1.state>contact2.state) return 1;
+                            else if (contact1.state<contact2.state) return -1;
+                            return 0;
+                            }); break;
+            case "zip": addressBookArry.sort((contact1,contact2) => {
+                                return contact1.zipCode-contact2.zipCode;
+                            }); break;
+            default: console.log("Unsupported type.");
+        }
+    }
+    
+    sortContacts("city");
+    console.log("The sorted Address Book on City is: ");
+    console.log(addressBookArry);
+    
+    sortContacts("state");
+    console.log("The sorted Address Book on State is: ");
+    console.log(addressBookArry);
+    
+    sortContacts("zip");
+    console.log("The sorted Address Book on Zip Code is: ");
+    console.log(addressBookArry);

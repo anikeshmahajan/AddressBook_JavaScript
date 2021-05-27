@@ -146,4 +146,11 @@ class AddressBook{
     viewByState("Jammu");
 
 
-  
+    function getCountByCityState(cityOrState){
+        let count = 0;
+        addressBookArry.filter(contact=>contact.city==cityOrState).forEach(contact=>++count);
+        addressBookArry.filter(contact=>contact.state==cityOrState).forEach(contact=>++count);
+        return count;
+    }
+    console.log("Count in Jammu: "+getCountByCityState("Jammu"));
+    console.log("Count in Akhnoor: "+getCountByCityState("Akhnoor"));
